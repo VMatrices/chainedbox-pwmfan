@@ -1,0 +1,15 @@
+[Unit]
+Description=Auto PWM Fan Script
+After=syslog.target
+ 
+[Service]
+Type=forking
+PIDFile=/var/run/pwm-fan.pid
+ExecStart=/bin/bash -c "/etc/pwm-fan.d/pwm-fan" &
+ExecReload=/bin/kill -s HUP 
+ExecStop=/bin/kill -s QUIT 
+Restart=always
+PrivateTmp=true
+ 
+[Install]
+WantedBy=multi-user.target
