@@ -87,7 +87,7 @@ function print_param {
 	echo -e " Fan Stopped temp:       $STOP_TEMP °C"
 	echo -e " Watch Interval Time:    ${WATCH_INTERVAL}s"
 	if [[ -n "$(read_cpu_temp)" ]]; then
-		echo -e " Watch Disk:             ${DISK}s"
+		echo -e " Watch Disk:             ${DISK}"
 	fi
 	print_line
 }
