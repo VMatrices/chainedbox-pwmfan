@@ -60,7 +60,7 @@ function calc_fan_speed {
 	echo $(expr $MIN_SPEED + $temp_duty \* $speed_range / $temp_range)
 }
 
-# Set the pwm duty_cycle by percentage offerd
+# Set the pwm duty_cycle by percentage offered
 function set_fan_speed {
 	speed_percent=$1
 	if [[ $speed_percent -gt 100 ]]; then
@@ -166,7 +166,7 @@ function start {
 	print_header
 	print_param
 
-	if [[ $PWM_FAN_DEAMON_MODE = 1 ]]; then
+	if [[ $PWM_FAN_DAEMON_MODE = 1 ]]; then
 		echo $$ >$pid_file
 		main 0
 	else
@@ -182,8 +182,8 @@ case $1 in
 	stop_fan
 	;;
 "start-daemon")
-	export PWM_FAN_DEAMON_MODE=1
-	echo Startting with deamon mode ....
+	export PWM_FAN_DAEMON_MODE=1
+	echo Startting with daemon mode ....
 	$0 start &
 	;;
 "stop")
@@ -198,7 +198,7 @@ case $1 in
 	print_line
 	echo " Usage For Terminal (Not Recommend):"
 	echo "   Normal Mode: pwm-fan (start|stop-fan)"
-	echo "   Daemon Mode: pwm-fan (start-deamon|stop)"
+	echo "   Daemon Mode: pwm-fan (start-daemon|stop)"
 	print_line
 	;;
 esac
