@@ -26,7 +26,7 @@ echo low > /sys/class/gpio/gpio79/direction
 echo 79 > /sys/class/gpio/unexport
 ```
 
-> 情报来源：[**粒子云风扇调速原理** ](https://www.right.com.cn/forum/forum.php?tid=1005987)
+> 来源：[**粒子云风扇调速原理** ](https://www.right.com.cn/forum/forum.php?tid=1005987)
 
 
 
